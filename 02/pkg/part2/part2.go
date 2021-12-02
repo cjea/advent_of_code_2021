@@ -58,14 +58,14 @@ func ParseOp(raw string) Op {
 type Coords struct {
 	Depth int
 	Horiz int
-  Aim   int
+	Aim   int
 }
 
 func (c *Coords) Apply(op Op) {
 	switch op.Direction {
 	case FORWARD:
 		c.Horiz += op.Qty
-    c.Depth += (c.Aim * op.Qty)
+		c.Depth += (c.Aim * op.Qty)
 	case UP:
 		c.Aim -= op.Qty
 	case DOWN:
